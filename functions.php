@@ -3,6 +3,7 @@
 
 function montheme_supports () {
     add_theme_support ('title-tag');
+    add_theme_support('post-thumbnails'); // activation des images titre sur une card
 }
 
 function monsite_register_assets() {

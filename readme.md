@@ -13,3 +13,6 @@
 - permetent d'alterer une valeur
 
 ## Les boubles
+
+# Indentation dans VSCode
+- Crtl + Shift + P  et chercher `Format Document` ou alors `Alt + Shift + F` pour aller plus rapidement
