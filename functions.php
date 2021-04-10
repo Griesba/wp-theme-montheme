@@ -81,29 +81,6 @@ function montheme_pagination()
     echo '</nav>';
 }
 
-function montheme_add_custom_box()
-{
-    add_meta_box('montheme_sponso', 'Sponsoring', 'montheme_render_sponso_box', 'post', 'side');
-}
-
-function montheme_render_sponso_box()
-{
-?>
-    <input type="hidden" value="0" name="montheme_sponso">
-    <input type="checkbox" value="1" name="montheme_sponso">
-    <label for="monthemesponso">Cet articel est sponsorisé ?</label>
-<?php
-}
-
-function montheme_save_sponso ($post_id) {
-	if(array_key_exists('montheme_sponso', $_POST) && current_user_can('edit_post', $post_id)) {
-		if($_POST['montheme_sponso'] === '0') {
-			delete_post_meta($post_id, 'montheme_sponso');
-		} else {
-			update_post_meta($post_id, 'montheme_sponso', 1);
-		}
-	}
-}
 
 // utilisation des hooks:  add_action et add_filters (ce sont des pipe)
 add_action('after_setup_theme', 'montheme_supports');
@@ -114,7 +91,9 @@ add_filter('document_title_separator', 'montheme_title_separator');
 add_filter('document_title_parts', 'montheme_document_title_parts');
 add_filter('nav_menu_css_class', 'mon_theme_menu_class');
 add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
-add_action('add_meta_boxes', 'montheme_add_custom_box');
-add_action('save_post', 'montheme_save_sponso')
 
+
+require_once('metaboxes/sponso.php');
+
+SponsoMetaBox::register();
 ?>
