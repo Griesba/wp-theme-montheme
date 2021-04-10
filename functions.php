@@ -44,6 +44,27 @@ function mon_menu_link_class ($attrs) {
     return $attrs;
 }
 
+function montheme_pagination () {
+    $pages = paginate_links(['type' => 'array']);
+    if($pages === NULL) {
+        return;
+    }
+    echo '<nav arial-lavel="Pagination" class="my-4">';
+    echo '<ul class="pagination"';
+        foreach($pages as $page) {
+            $active = strpos($page, 'current') !== false; // on cherche la class wordpress <current> elle est presente quand la page est active
+            $class = 'page-item';
+            if($active) {
+                $class .= ' active';
+            }
+            echo '<li class="'. $class .'">';
+            echo str_replace('page-numbers', 'page-link', $page); // on remplace la classe wordpress page-numbers par la classes  bootstrap page-link 
+            echo '</li>';
+        }
+    echo '</ul>';
+    echo '</nav>';
+}
+
 // utilisation des hooks:  add_action et add_filters (ce sont des pipe)
 add_action('after_setup_theme', 'montheme_supports');
 // Register style sheet and scripts: bootstrap in this case
