@@ -4,6 +4,11 @@
 ## La page des themes
 - http://localhost/wordpress/wp-admin/themes.php
 
+
+# Indentation dans VSCode
+- Crtl + Shift + P  et chercher `Format Document` ou alors `Alt + Shift + F` pour aller plus rapidement
+
+
 ## Hook
 - see documentation. Exemple: after_setup_theme, wp_register_style
 
@@ -14,5 +19,5 @@
 
 ## Les boubles
 
-# Indentation dans VSCode
-- Crtl + Shift + P  et chercher `Format Document` ou alors `Alt + Shift + F` pour aller plus rapidement
+## Hierachie des templates
+https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
