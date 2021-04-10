@@ -7,6 +7,16 @@ function montheme_supports () {
     add_theme_support('menus'); // activation de la bar de menus 
     register_nav_menu('header', 'En tête de menu'); 
     register_nav_menu('footer', 'Pieds de page menu'); 
+
+    // support d'image pour le header des cards. Attention wordpress n'agrandit pas les images si elles sont petites
+    add_image_size('post-thumbnail', 350, 215, true); 
+    /**
+     * pour changer les dimentions d'un format d'image fournit par wordpress
+     * remove_image_size('medium');
+     * add_image_size('medium', 500, 500);
+     */
+    
+    
 }
 
 function monsite_register_assets() {

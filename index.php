@@ -5,7 +5,8 @@
         <?php while (have_posts()) : the_post(); ?>
             <div class="col-sm-4">
                 <div class="card" style="width: 18rem;">
-                    <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
+                    <!-- on change de format d'imamge de medium à post-thumbnails, les taille changent -->
+                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title() ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php the_category() ?></h6>

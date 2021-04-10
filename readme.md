@@ -21,3 +21,6 @@
 
 ## Hierachie des templates
 https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
+
+## Les formats d'image
+- on a installé le plugin 'Regenerate Thumbnails' qui nous permet générer different format d'image en fonction du format qu'on a choisi
