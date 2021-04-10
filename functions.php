@@ -4,6 +4,9 @@
 function montheme_supports () {
     add_theme_support ('title-tag');
     add_theme_support('post-thumbnails'); // activation des images titre sur une card
+    add_theme_support('menus'); // activation de la bar de menus 
+    register_nav_menu('header', 'En tête de menu'); 
+    register_nav_menu('footer', 'Pieds de page menu'); 
 }
 
 function monsite_register_assets() {
@@ -29,6 +32,18 @@ function montheme_document_title_parts($title) {
     $title['demo'] = 'salut';
     return $title;
 }
+
+function mon_theme_menu_class($classes) {
+    // on peut faire un var_dump dans un premier temps pour voir les différents parametre du filtre
+    $classes[] = 'nav-item';
+    return $classes;
+}
+
+function mon_menu_link_class ($attrs) {
+    $attrs['class'] = 'nav-link';
+    return $attrs;
+}
+
 // utilisation des hooks:  add_action et add_filters (ce sont des pipe)
 add_action('after_setup_theme', 'montheme_supports');
 // Register style sheet and scripts: bootstrap in this case
@@ -36,6 +51,8 @@ add_action( 'wp_enqueue_scripts', 'monsite_register_assets' );
 add_filter( 'wp_title', 'montheme_title');
 add_filter( 'document_title_separator', 'montheme_title_separator');
 add_filter('document_title_parts', 'montheme_document_title_parts');
+add_filter('nav_menu_css_class', 'mon_theme_menu_class');
+add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
 
 ?>
 
