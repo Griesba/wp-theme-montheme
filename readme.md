@@ -21,10 +21,14 @@
 
 ## Hierachie des templates
 - https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
-- taxonomy-sport: fichier pour la gestion de l'affichage des taxonomy lié au sport
+- taxonomy-sport.php: fichier template pour la gestion de l'affichage des taxonomy lié au sport
+- archive-bien.php: fichier template des post de type bien
 
 ## Les formats d'image
 - on a installé le plugin 'Regenerate Thumbnails' qui nous permet générer different format d'image en fonction du format qu'on a choisi
+
+## Taxonomy et type de post
+- lorsqu'on enregitre un nouveau type de taxonomy et de post, il faut également enregistrer les permalinks pour qu'ils soient pris en compte.
 
 ## get_template_part('parts/card', 'post');
     - si dans parts j'ai un fichier card-post je l'utilise sinon c'est card.php 

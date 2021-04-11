@@ -100,9 +100,20 @@ function montheme_init() {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
+
+    // enregistrer les posts de type bien: voir la docu pour plus d'info
+    register_post_type('bien', [
+		'label' => 'Bien immo',
+		'public' => true,
+		'menu_positon' => 3,
+		'menu_icon' => 'dashicons-building', // pour avoir les icons wordpress cherchez Dashicons wordpress dans google
+		'supports' => ['title', 'editor', 'thumbnail'],
+		'show_in_rest' => true,
+		'has_archive' => true,
+	]);
 }
 
-add_action('init', 'montheme_init'); // les taxonomy doivent s'enregistrer avant init
+add_action('init', 'montheme_init'); // les taxonomy ne doivent pas s'enregistrer avant init
 // utilisation des hooks:  add_action et add_filters (ce sont des pipe)
 add_action('after_setup_theme', 'montheme_supports');
 // Register style sheet and scripts: bootstrap in this case
