@@ -131,6 +131,31 @@ require_once('options/agence.php');
 SponsoMetaBox::register();
 AgenceMenuPage::register();
 
+add_filter('manage_posts_columns', function($columns){
+    // var_dump($columns);
+    /*return [
+        'cb' => $columns['cb'],
+        'title' => $columns['title'],
+        'author' => $columns['author'],
+        'categories' => $columns['categories'],
+        'tags' => $columns['tags'],
+        'taxonomy-sport' => $columns['taxonomy-sport'],
+        'comments' => $columns['comments'],
+        'date' => $columns['date'],
+        'sponsored' => 'Sponsored'
+    ]; */
+    $newColumns = [];
+    foreach($columns as $k => $v) {
+        if($k === 'date') {
+            $newColumns['sponsored'] = 'Sponsored post';
+        }
+        $newColumns[$k] = $v;
+    }
+    return $newColumns;
+       
+});
+
+
 add_filter('manage_bien_posts_columns', function($column){
     // var_dump($column); die(); pour voire les parametres
     return [
@@ -141,12 +166,25 @@ add_filter('manage_bien_posts_columns', function($column){
     ];
 });
 
+
+add_filter('manage_posts_custom_column', function($column, $post_id){
+    if($column === 'sponsored') {
+        if(!empty(get_post_meta($post_id, SponsoMetaBox::META_KEY, true))){
+            $class = 'yes';
+        } else {
+            $class = 'no';    
+        }
+        echo '<div class="bullet bullet-"'. $class.' >';
+    }
+}, 10, 2);
+
 add_filter('manage_bien_posts_custom_column', function($column, $postId){
     // faire var_dump(func_get_args()); die(); pour voir les params ou chercher manage_post_custom_column dans la docu
     if($column === 'thumbnail') {
         the_post_thumbnail('thumbnail', $postId);
     }
 }, 10, 2);
+
 
 add_action('admin_enqueue_scripts', function(){
     wp_enqueue_style('admin_montheme', get_template_directory_uri() . '/assets/admin.css');
