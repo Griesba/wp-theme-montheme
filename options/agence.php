@@ -25,6 +25,8 @@ class AgenceMenuPage
 
     public static function registerSettings() {
         register_setting(self::GROUP, 'agence_horaire');
+        register_setting(self::GROUP, 'agence_date');
+       
         add_settings_section('agence_options_section', 'Paramètres', function() {
             echo "Vous pouvez ici gérer les parametres liés à l'agence immobilière.";
         }, self::GROUP);
