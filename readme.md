@@ -20,7 +20,11 @@
 ## Les boubles
 
 ## Hierachie des templates
-https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
+- https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
+- taxonomy-sport: fichier pour la gestion de l'affichage des taxonomy lié au sport
 
 ## Les formats d'image
 - on a installé le plugin 'Regenerate Thumbnails' qui nous permet générer different format d'image en fonction du format qu'on a choisi
+
+## get_template_part('parts/card', 'post');
+    - si dans parts j'ai un fichier card-post je l'utilise sinon c'est card.php 
