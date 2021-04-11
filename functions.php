@@ -174,7 +174,7 @@ add_filter('manage_posts_custom_column', function($column, $post_id){
         } else {
             $class = 'no';    
         }
-        echo '<div class="bullet bullet-"'. $class.' >';
+        echo '<div class="bullet bullet-'. $class.'" >';
     }
 }, 10, 2);
 
