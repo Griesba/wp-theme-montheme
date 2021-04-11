@@ -130,4 +130,26 @@ require_once('options/agence.php');
 
 SponsoMetaBox::register();
 AgenceMenuPage::register();
+
+add_filter('manage_bien_posts_columns', function($column){
+    // var_dump($column); die(); pour voire les parametres
+    return [
+        'cb' => $column['cb'],
+        'thumbnail' => 'Miniature',
+        'title' => $column['title'],
+        'date' => $column['date']
+    ];
+});
+
+add_filter('manage_bien_posts_custom_column', function($column, $postId){
+    // faire var_dump(func_get_args()); die(); pour voir les params ou chercher manage_post_custom_column dans la docu
+    if($column === 'thumbnail') {
+        the_post_thumbnail('thumbnail', $postId);
+    }
+}, 10, 2);
+
+add_action('admin_enqueue_scripts', function(){
+    wp_enqueue_style('admin_montheme', get_template_directory_uri() . '/assets/admin.css');
+})
+
 ?>
