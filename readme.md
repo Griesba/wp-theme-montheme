@@ -32,3 +32,6 @@
 
 ## get_template_part('parts/card', 'post');
     - si dans parts j'ai un fichier card-post je l'utilise sinon c'est card.php 
+
+## pour avoir la page courente
+echo var_dump(get_current_screen()); die();
