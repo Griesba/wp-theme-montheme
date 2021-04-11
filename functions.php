@@ -188,6 +188,32 @@ add_filter('manage_bien_posts_custom_column', function($column, $postId){
 
 add_action('admin_enqueue_scripts', function(){
     wp_enqueue_style('admin_montheme', get_template_directory_uri() . '/assets/admin.css');
-})
+});
+
+/**
+ * @param WP_Query $query
+ */
+function montheme_pre_get_posts ($query) {
+    if(is_admin() || !is_search() || !$query->is_main_query()) {
+        return; // on ne veut pas de modif quand on est dans la page d'admin, de non-recherche et de non-principale
+    }
+    if(get_query_var('sponso') === '1') {
+        $meta_query = $query->get('meta_query', []);
+        $meta_query[] = [
+            'key' => SponsoMetaBox::META_KEY,
+            'compare' => 'EXISTS'
+        ];
+        $query->set('meta_query', $meta_query);
+    }
+}
+
+function montheme_query_vars ($params) {
+    
+    $params[] = 'sponso'; // ici on ajoute 'sponso' dans la WP_query
+    return $params;
+}
+
+add_action('pre_get_posts', 'montheme_pre_get_posts');
+add_filter('query_vars', 'montheme_query_vars');
 
 ?>
