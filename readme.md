@@ -35,3 +35,6 @@
 
 ## pour avoir la page courente
 echo var_dump(get_current_screen()); die();
+
+## widgets
+dynamic_sidebar('homepage')) ici on charche une side avec le nom 'homepage' et son code est dans le fichier sidebar-homepage.php 
