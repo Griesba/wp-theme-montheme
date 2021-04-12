@@ -1,11 +1,14 @@
 <?php
 
 
+require_once('walker/CommentWalker.php'); // le walker pour les commentaires
+
 function montheme_supports()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails'); // activation des images titre sur une card
     add_theme_support('menus'); // activation de la bar de menus 
+    // add_theme_support('html5'); active le html5 si c'est supporté
     register_nav_menu('header', 'En tête de menu');
     register_nav_menu('footer', 'Pieds de page menu');
 
@@ -231,6 +234,16 @@ function montheme_register_widget() {
 };
 
 add_action('widgets_init', 'montheme_register_widget');
+
+add_filter('comment_form_default_fields', function($fields){
+    $fields['email'] = <<<HTML
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" name="email" id="email" required>
+    </div>
+HTML;     
+    return $fields;
+});
 
 
 ?>

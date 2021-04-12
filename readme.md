@@ -38,3 +38,11 @@ echo var_dump(get_current_screen()); die();
 
 ## widgets
 dynamic_sidebar('homepage')) ici on charche une side avec le nom 'homepage' et son code est dans le fichier sidebar-homepage.php 
+
+## commentaires
+comments_open() || get_comments_number() si les commentaire sont ouvert ou s'il en existe
+
+comments.php contient le code pour representer les commentaires. Il écrase le code par defaut de wordpress
+
+Dand la partie Setting de l'admin, sous la categorie 'Discussion' tu peux reglé l'order d'afficher des commentaire et le nombre de commentaire par page. ça peut aussi se faire par le code en utilisant la function wp_list_comments, mais c'est plus complexe à gérer
+Le filter comment_form_default_fields permet de modifier le html du formulaire comment. il faut se connecté comme user pour tester ça. l'admin ne le voit pas
