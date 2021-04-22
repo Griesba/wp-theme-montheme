@@ -2,6 +2,7 @@
 
 
 require_once('walker/CommentWalker.php'); // le walker pour les commentaires
+require_once('options/apparence.php'); // manipulation de l'API customize (https://developer.wordpress.org/themes/customize-api/customizer-objects/)
 
 function montheme_supports()
 {
@@ -26,8 +27,11 @@ function monsite_register_assets()
     wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', []);
     wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' . date('YmdHis'), ['popper', 'jquery'], false, true);
     wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [], false, true);
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], false, true);
+    if (!is_customize_preview()) {
+//si je ne suis pas en train de changer d'apparence dans l'admin on charge juste le min css 
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], false, true);
+    }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
 }
