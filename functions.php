@@ -225,11 +225,12 @@ add_filter('query_vars', 'montheme_query_vars');
 
 require_once 'widgets/YoutubeWidget.php';
 
+// les fonctions de l'i8n: __, _e, _n
 function montheme_register_widget() {
     register_widget(YoutubeWidget::class);
     register_sidebar([
         'id' => 'homepage',
-        'name' => 'Sidebar Accueil',
+        'name' => __('Sidebar Accueil', 'montheme'),
         'before_widget' => '<div class="p-4 %2$s" id="%1$s"',
         'after_widget' => '</div>',
         'before_title' => ' <h4 class="fst-italic">',
@@ -249,5 +250,8 @@ HTML;
     return $fields;
 });
 
+add_action('after_setup_theme', function () {
+    load_theme_textdomain('montheme', get_template_directory() . '/languages');
+});
 
 ?>
