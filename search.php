@@ -22,7 +22,7 @@
   </div>
 </form>
 
-<h1 class="mb-4">Résultat de vos recherche "<?= get_search_query() ?>"</h1>
+<h1 class="mb-4"><?= sprintf(apply_filters('montheme_search_filter', "Résultat de vos recherche \"%s\""), get_search_query()) ?> </h1>
 
 <?php if (have_posts()) : ?>
     <div class="row">

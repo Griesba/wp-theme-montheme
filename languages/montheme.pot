@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Mon theme\n"
-"POT-Creation-Date: 2021-04-23 23:36+0200\n"
+"POT-Creation-Date: 2021-04-23 23:58+0200\n"
 "PO-Revision-Date: 2021-04-23 23:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,6 +15,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:9
+#, php-format
+msgid "%s Commentaire"
+msgid_plural "%s Commentaires"
+msgstr[0] ""
+msgstr[1] ""
 
 #: functions.php:233
 msgid "Sidebar Accueil"

@@ -46,3 +46,9 @@ comments.php contient le code pour representer les commentaires. Il écrase le c
 
 Dand la partie Setting de l'admin, sous la categorie 'Discussion' tu peux reglé l'order d'afficher des commentaire et le nombre de commentaire par page. ça peut aussi se faire par le code en utilisant la function wp_list_comments, mais c'est plus complexe à gérer
 Le filter comment_form_default_fields permet de modifier le html du formulaire comment. il faut se connecté comme user pour tester ça. l'admin ne le voit pas
+
+
+#Theme enfant
+get_template_directory_uri() => done uri du theme parent. Attention si on est dans un theme enfant le seul moyen  d'avoir son URI est de le récupérer à partir du stylesheet avec get_stylesheet_directory_uri()
+- on peut utiliser le theme enfant pour desenregistrer un script: wp_deregister_style('bootstrap'). Il faut le faire avec une priorité inferieur à celle du theme parent parce qu'il executé après le theme enfant par défaut. Ce changement fait que hook tu theme enfant sera executé après celui du parent.
+- enregistrement de la tradution dans le theme enfant: load_child_theme_textdomain('montheme-enfant', get_stylesheet_directory() . '/languages');

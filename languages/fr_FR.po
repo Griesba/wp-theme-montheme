@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mon theme\n"
-"POT-Creation-Date: 2021-04-23 23:54+0200\n"
-"PO-Revision-Date: 2021-04-23 23:55+0200\n"
+"POT-Creation-Date: 2021-04-23 23:58+0200\n"
+"PO-Revision-Date: 2021-04-24 00:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -30,7 +30,7 @@ msgstr "Sidebar Accueil"
 
 #: walker/CommentWalker.php:125 walker/CommentWalker.php:223
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Vos commentaires ont besoin de moderation."
 
 #: walker/CommentWalker.php:127 walker/CommentWalker.php:225
 msgid ""
