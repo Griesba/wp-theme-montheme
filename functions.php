@@ -33,7 +33,7 @@ function monsite_register_assets()
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], false, true);
     }
     wp_enqueue_style('bootstrap');
-    wp_enqueue_script('bootstrap');
+    wp_enqueue_script('bootstrap');    
 }
 
 
@@ -134,9 +134,11 @@ add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
 
 require_once('metaboxes/sponso.php');
 require_once('options/agence.php');
+require_once('metaboxes/sliderImgUrl.php');
 
 SponsoMetaBox::register();
 AgenceMenuPage::register();
+CarouselSlidImgUrl::register();
 
 add_filter('manage_posts_columns', function($columns){
     // var_dump($columns);
