@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
 		// When an image is selected, run a callback.
 		file_frame.on( 'select', function() {
 		  var attachment = file_frame.state().get('selection').first().toJSON();
+		  console.log(attachment);
 		  jQuery("#"+field_id).val(attachment.id);
 		  jQuery("#listingimagediv img").attr('src',attachment.url);
 		  jQuery( '#listingimagediv img' ).show();

@@ -38,14 +38,16 @@ class CarouselSlidImgUrl {
         $content_width = 254;
 
          //var_dump(get_current_screen()); //pour voir le nom de la page
-
+        
         if ( $image_id && get_post( $image_id ) ) {
+            var_dump($image_id);
+            var_dump(get_post($image_id));
             if ( ! isset( $_wp_additional_image_sizes['post-thumbnail'] ) ) {
                 $thumbnail_html = wp_get_attachment_image( $image_id, array( $content_width, $content_width ) );
             } else {
-                $thumbnail_html = wp_get_attachment_image( $image_id, 'post-thumbnail' );
+                $thumbnail_html = wp_get_attachment_image( $image_id );
             }
-
+            
             if ( ! empty( $thumbnail_html ) ) {
                 $content = $thumbnail_html;
                 $content .= '<p class="hide-if-no-js"><a href="javascript:;" id="remove_listing_image_button" >' . esc_html__( 'Remove listing image', 'text-domain' ) . '</a></p>';
@@ -66,7 +68,7 @@ class CarouselSlidImgUrl {
     }
 
     public static function save($post){
-
+//var_dump($post);
         if( isset( $_POST['_listing_cover_image'] ) ) {
             $image_id = (int) $_POST['_listing_cover_image'];
             update_post_meta( $post, self::META_KEY, $image_id );

@@ -1,5 +1,11 @@
 <?php get_header() ?>
 
+
+<?php 
+$post = get_post(get_the_ID());
+$image_id = get_post_meta($post->ID, SponsoMetaBox::META_KEY, true);
+var_dump($image_id); ?>
+
 <main class="container">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -9,13 +15,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
+      <img class="d-block w-100" src="http://localhost/wordpress/wp-content/uploads/2021/04/Capture.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="http://localhost/wordpress/wp-content/uploads/2021/04/Capture.png" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="http://localhost/wordpress/wp-content/uploads/2021/04/Capture.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
