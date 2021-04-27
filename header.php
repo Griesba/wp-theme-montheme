@@ -48,5 +48,12 @@
   </div>
 </nav>
 
+
+<?php 
+if(is_home() || is_front_page()) {
+  echo do_shortcode('[metaslider id="164"]');
+}
+ ?>
+
 <div class="container">
     

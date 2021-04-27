@@ -256,4 +256,18 @@ add_action('after_setup_theme', function () {
     load_theme_textdomain('montheme', get_template_directory() . '/languages');
 });
 
+function showMessageToAdmin() {
+    include_once(ABSPATH. 'wp-admin/includes/plugin.php');
+
+    if(!is_plugin_active('ml-slider/ml-slider.php')){
+        ?>
+        <div id="alert" class="error">
+            <p>This theme require you to install <a href="https://fr.wordpress.org/plugins/ml-slider/">metaslider</a> </p>
+        </div>
+        <?php
+    }
+}
+
+add_action('admin_notices', 'showMessageToAdmin');
+
 ?>
