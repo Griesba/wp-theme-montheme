@@ -2,3 +2,8 @@
 Theme name: Mon theme
 Text Domain: montheme
 */
+
+body {
+    background-color: rebeccapurple;
+    font-family: 'Roboto', sans-serif;
+}
