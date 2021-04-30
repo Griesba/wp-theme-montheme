@@ -22,9 +22,9 @@
              'theme_location'    => 'header',
              'depth'             => 2,
              'container'         => 'div',
-             'container_class'   => 'ml-auto',
+             'container_class'   => 'col-md-6 ml-auto',
              'container_id'      => '',
-             'menu_class'        => 'navbar-nav mr-auto',
+             'menu_class'        => 'navbar-nav mr-auto my-navbar-nav',
              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
              'walker'            => new wp_bootstrap_navwalker())
              );

@@ -3,7 +3,34 @@ Theme name: Mon theme
 Text Domain: montheme
 */
 
-body {
-    background-color: rebeccapurple;
+
+.navbar {
+
+    color: #42a42b !important;
+    background:white !important;
     font-family: 'Roboto', sans-serif;
+
 }
+
+.my-navbar-nav {
+    margin-right: 400px;  
+}
+
+#menu-navigation li a {
+    color: #0e2e80 !important;    
+    text-transform: uppercase;  
+    
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+
+
+.active a{
+    border-bottom: 3px solid #42a42b;
+ }

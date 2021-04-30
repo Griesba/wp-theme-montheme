@@ -37,7 +37,7 @@ function monsite_register_assets()
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');    
     wp_enqueue_style('main-style', get_stylesheet_uri());
-    wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap', []);
+    wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap', []);
 }
 
 
@@ -60,6 +60,9 @@ function montheme_document_title_parts($title)
 function mon_theme_menu_class($classes)
 {
     // on peut faire un var_dump dans un premier temps pour voir les différents parametre du filtre
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+      }
     $classes[] = 'nav-item';
     return $classes;
 }
