@@ -266,10 +266,10 @@ add_action('after_setup_theme', function () {
 function showMessageToAdmin() {
     include_once(ABSPATH. 'wp-admin/includes/plugin.php');
 
-    if(!is_plugin_active('ml-slider/ml-slider.php')){
+    if(!is_plugin_active('smart-slider-3/smart-slider-3.php')){
         ?>
         <div id="alert" class="error">
-            <p>This theme require you to install <a href="https://fr.wordpress.org/plugins/ml-slider/">metaslider</a> </p>
+            <p>This theme require you to install <a href="https://www.competethemes.com/blog/best-wordpress-slider-plugins/">smart slider 3</a> </p>
         </div>
         <?php
     }

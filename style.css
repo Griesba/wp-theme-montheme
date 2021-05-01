@@ -16,6 +16,12 @@ Text Domain: montheme
     margin-right: 400px;  
 }
 
+#menu-navigation li a:hover {
+    border-bottom: 3px solid #0e2e80;
+    text-decoration: none;
+    color: inherit;
+}
+
 #menu-navigation li a {
     color: #0e2e80 !important;    
     text-transform: uppercase;  
@@ -34,3 +40,9 @@ Text Domain: montheme
 .active a{
     border-bottom: 3px solid #42a42b;
  }
+
+ /* margin top & Bottom */
+.mt {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}

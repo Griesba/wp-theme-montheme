@@ -10,6 +10,32 @@
       <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
     </div>
   </div> -->
+  
+  <div class="row mt centered ">
+      <div class="col-lg-4 offset-lg-4">
+        <h3>What Is Happening?</h3>
+        <hr>
+      </div>
+    </div>
+
+    <?php 
+      // the query
+      $the_query = new WP_Query( array(
+          'posts_per_page' => 3,
+      )); 
+    ?>
+    <?php if ($the_query->have_posts()) : ?>
+    <div class="row">
+        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <div class="col-sm-4">
+                <?php get_template_part('parts/card', 'post'); ?>
+            </div>
+        <?php endwhile ?>
+    </div>
+    <?php else : ?>
+        <h1>Pas d'article</h1>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
 
   <div class="row mb-2">
     <div class="col-md-6">
@@ -116,9 +142,10 @@
     </div>
 
     
-    <div class="col-md-4">
+    <!-- side bar -->
+    <!--    <div class="col-md-4">
     <?= get_sidebar('homepage'); ?>
-    <!--        
+        
     <div class="p-4 mb-3 bg-light rounded">
         <h4 class="fst-italic">About</h4>
         <p class="mb-0">Saw you downtown singing the Blues. Watch you circle the drain. Why don't you let me stop by? Heavy is the head that <em>wears the crown</em>. Yes, we make angels cry, raining down on earth from up above.</p>
@@ -150,8 +177,8 @@
           <li><a href="#">Facebook</a></li>
         </ol>
       </div>
-      -->
-    </div>
+      
+    </div>--> <!-- end side bar -->
 
 
   </div><!-- /.row -->

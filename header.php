@@ -82,11 +82,11 @@
 </nav>
 
 
-<?php 
-if(is_home() || is_front_page()) {
-  echo do_shortcode('[metaslider id="164"]');
-}
- ?>
+
+
+<?php
+echo do_shortcode('[smartslider3 slider="2"]');
+?>
 
 <div class="container">
     
