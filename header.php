@@ -8,12 +8,23 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Brand and toggle button -->
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<?php 
+  $attachment_url = ABSPATH.'wp_content/uploads/2021/05/fakeLogoAdd.png';
+  $attachement_id = attachment_url_to_postid($attachment_url);
+  
+?> 
+  <img src="<?= get_site_url()?>/wp-content/uploads/2021/05/fakeLogoAdd-e1619951340157.png"  class="d-inline-block align-top" >
+        <!-- Brand and toggle button -->    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <!-- End -->
+
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
     <!-- Your website Links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?php

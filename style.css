@@ -46,3 +46,32 @@ Text Domain: montheme
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
+
+/* Dashed Separator */
+
+hr-d {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+ p.time {
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 0px;
+	color: #979797;
+	text-align: right;
+}
+
+ p.time > i {
+	font-size: 12px;
+}
+
+
+.category ul {
+    list-style: none;
+}

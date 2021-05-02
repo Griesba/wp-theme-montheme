@@ -40,8 +40,6 @@ class CarouselSlidImgUrl {
          //var_dump(get_current_screen()); //pour voir le nom de la page
         
         if ( $image_id && get_post( $image_id ) ) {
-            var_dump($image_id);
-            var_dump(get_post($image_id));
             if ( ! isset( $_wp_additional_image_sizes['post-thumbnail'] ) ) {
                 $thumbnail_html = wp_get_attachment_image( $image_id, array( $content_width, $content_width ) );
             } else {
