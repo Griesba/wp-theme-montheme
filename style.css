@@ -58,6 +58,16 @@ hr-d {
     padding: 0;
 }
 
+.time-block {
+    display: flex; 
+    padding: 5px;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 0px;
+    color: #979797;
+    text-align: right;
+}
  p.time {
     font-family: 'Ruda', sans-serif;
     font-weight: 400;

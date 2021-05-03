@@ -38,6 +38,8 @@ function monsite_register_assets()
     wp_enqueue_script('bootstrap');    
     wp_enqueue_style('main-style', get_stylesheet_uri());
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap', []);
+    wp_enqueue_style('ruda', 'https://fonts.googleapis.com/css?family=Ruda:400,900,700', []);
+    wp_enqueue_style('font-awesome', get_stylesheet_directory_uri().'/assets/lib/font-awesome/css/font-awesome.min.css', []);
 }
 
 

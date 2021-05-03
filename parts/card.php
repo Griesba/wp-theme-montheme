@@ -4,20 +4,15 @@
     <div class="card-body">
         <h5 class="card-title"><?php the_title() ?></h5>        
         
-        <?php
-        the_terms(get_the_ID(), 'sport', '<li>', '</li><li>', '</li>'); // ici la liste de sport taxonomy
-        ?>
         <p class="card-text">
             <?php the_excerpt() ?>
         </p>
         
         <a href="<?php the_permalink() ?>">Voir plus</a>
         <hr-d>
-        <div style="display: flex; padding: 5px">
-            <span class="card-subtitle mb-2 text-muted category" style="margin: 0px;" ><?php the_category() ?></span>
-            <span class="time" style="margin-left: 15px;"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</span>
-        </div>
-        
-       
+        <div class="time-block">
+        <span class="time" style="margin-left: 15px;"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</span>    
+        <span class="card-subtitle mb-2 text-muted category" style="margin: 0px;" ><?php the_category() ?></span>            
+        </div>       
     </div>
 </div>
