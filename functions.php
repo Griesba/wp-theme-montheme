@@ -33,6 +33,7 @@ function monsite_register_assets()
 //si je ne suis pas en train de changer d'apparence dans l'admin on charge juste le min css 
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', [], false, true);
+        wp_enqueue_script('main-js', get_template_directory_uri() .'/assets/js.js', array('jquery'));      
     }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');    

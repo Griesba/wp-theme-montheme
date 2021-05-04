@@ -38,7 +38,6 @@ jQuery(document).ready(function($) {
 	};
 
 	jQuery('#listingimagediv').on( 'click', '#upload_listing_image_button', function( event ) {
-		console.log('je suis cliqué');
         event.preventDefault();
 		jQuery.fn.upload_listing_image( jQuery(this) );
 	});
