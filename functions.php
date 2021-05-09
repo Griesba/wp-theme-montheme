@@ -12,6 +12,12 @@ function montheme_supports()
     add_theme_support('post-thumbnails'); // activation des images titre sur une card
     add_theme_support('menus'); // activation de la bar de menus 
     // add_theme_support('html5'); active le html5 si c'est supporté
+    add_theme_support('custom-logo', array(
+        'height' => 100,
+        'width' => 300,
+        'flex-width' => true,
+        'flex-height' => true,
+    ));
     register_nav_menu('header', 'En tête de menu');
     register_nav_menu('footer', 'Pieds de page menu');
 
@@ -287,5 +293,18 @@ add_action('admin_notices', 'showMessageToAdmin');
 }
 add_action( 'init', 'register_my_menu' ); */
 /*End*/
+
+function montheme_the_custom_logo() {
+    if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+    }
+}
+
+add_filter('get_custom_logo','change_logo_class');
+
+function change_logo_class($html){
+    $html = str_replace('custom-logo-link', 'margin-lr-100', $html);
+    return $html;
+}
 
 ?>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php wp_head() ?>  
+    <?php wp_head() ?>
 </head>
 <body>
 
@@ -13,21 +13,15 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <div class="container">
     <?=  get_search_form(); ?>
-    </div>    
+    </div>
   </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<?php 
-  $attachment_url = ABSPATH.'wp_content/uploads/2021/05/fakeLogoAdd.png';
-  $attachement_id = attachment_url_to_postid($attachment_url);
-  
-?> 
-  <img src="<?= get_site_url()?>/wp-content/uploads/2021/05/fakeLogoAdd-e1619951340157.png"  class="d-inline-block align-top" >
+<?php montheme_the_custom_logo() ?>
 
-
-  <div id="main">
-    <button class="openbtn" id="openNavBtn"><i class="fa fa-search" style="font-size:24px"></i></button>  
+  <div id="main" class="ml-auto">
+    <button class="openbtn" id="openNavBtn" ><i class="fa fa-search" style="font-size:24px"></i></button>  
   </div>
   
   <!-- Brand and toggle button -->    
@@ -39,7 +33,6 @@
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-
     <!-- Your website Links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?php
@@ -48,7 +41,7 @@
              'theme_location'    => 'header',
              'depth'             => 2,
              'container'         => 'div',
-             'container_class'   => 'col-md-6 ml-auto',
+             'container_class'   => 'margin-lr-100',
              'container_id'      => '',
              'menu_class'        => 'navbar-nav mr-auto my-navbar-nav',
              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',

@@ -17,7 +17,8 @@ Text Domain: montheme
 }
 
 #menu-navigation li a:hover {
-    border-bottom: 3px solid #0e2e80;
+    border-bottom: 5px solid #0e2e80;
+    border-radius: 3px;
     text-decoration: none;
     color: inherit;
 }
@@ -38,7 +39,8 @@ Text Domain: montheme
 
 
 .active a{
-    border-bottom: 3px solid #42a42b;
+    border-bottom: 5px solid #42a42b;
+    border-radius: 3px;
  }
 
  /* margin top & Bottom */
@@ -68,7 +70,7 @@ hr-d {
     color: #979797;
     text-align: right;
 }
- p.time {
+p.time {
     font-family: 'Ruda', sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -77,10 +79,9 @@ hr-d {
 	text-align: right;
 }
 
- p.time > i {
+p.time > i {
 	font-size: 12px;
 }
-
 
 .category ul {
     list-style: none;
@@ -136,6 +137,11 @@ hr-d {
   #main {
     transition: margin-left .5s;
     padding: 16px;
+  }
+
+  .margin-lr-100 {
+      margin-left: 100px;
+      margin-right: 100px;
   }
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
