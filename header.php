@@ -21,7 +21,12 @@
 <?php montheme_the_custom_logo() ?>
 
   <div id="main" class="ml-auto">
-    <button class="openbtn" id="openNavBtn" ><i class="fa fa-search" style="font-size:24px"></i></button>  
+    <div class="openbtn" id="openNavBtn" >
+      <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
+      <div>Recherche</div>
+    </div>
+  </div>
+    
   </div>
   
   <!-- Brand and toggle button -->    

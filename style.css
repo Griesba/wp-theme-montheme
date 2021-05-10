@@ -130,10 +130,6 @@ p.time > i {
     border: none;
   }
   
-  .openbtn:hover {
-    background-color: #444;
-  }
-  
   #main {
     transition: margin-left .5s;
     padding: 16px;
@@ -147,5 +143,6 @@ p.time > i {
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+    
   }
   /*.sidebar end */
