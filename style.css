@@ -135,6 +135,15 @@ p.time > i {
     padding: 16px;
   }
 
+  @media screen and (min-width: 768px) {
+    .header-container {
+        border-bottom: 1px solid #F4F4F4;
+    }
+  }
+  
+  .mr-1rem {
+    margin-right: 1rem;
+  }
   .margin-lr-100 {
       margin-left: 100px;
       margin-right: 100px;

@@ -294,6 +294,9 @@ add_action('admin_notices', 'showMessageToAdmin');
 add_action( 'init', 'register_my_menu' ); */
 /*End*/
 
+/**
+ * adding custom logo image config with the_custom_logo
+ */
 function montheme_the_custom_logo() {
     if ( function_exists( 'the_custom_logo' ) ) {
         the_custom_logo();
@@ -303,7 +306,7 @@ function montheme_the_custom_logo() {
 add_filter('get_custom_logo','change_logo_class');
 
 function change_logo_class($html){
-    $html = str_replace('custom-logo-link', 'margin-lr-100', $html);
+    $html = str_replace('custom-logo-link', 'mr-1rem', $html);
     return $html;
 }
 

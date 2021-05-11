@@ -16,18 +16,20 @@
     </div>
   </div>
 </div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
 
-<?php montheme_the_custom_logo() ?>
+  <?php montheme_the_custom_logo() ?> 
 
-  <div id="main" class="ml-auto">
+<!--   <div id="main" class="ml-auto">
     <div class="openbtn" id="openNavBtn" >
       <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
       <div>Recherche</div>
     </div>
-  </div>
+  </div> -->
     
-  </div>
+ 
   
   <!-- Brand and toggle button -->    
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,8 +37,6 @@
   </button>
     <!-- End -->
 
-</nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <!-- Your website Links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,13 +46,20 @@
              'theme_location'    => 'header',
              'depth'             => 2,
              'container'         => 'div',
-             'container_class'   => 'margin-lr-100',
+             'container_class'   => '',
              'container_id'      => '',
-             'menu_class'        => 'navbar-nav mr-auto my-navbar-nav',
+             'menu_class'        => 'navbar-nav mr-auto',
              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
              'walker'            => new wp_bootstrap_navwalker())
              );
         ?>
+        <div id="main" class="ml-auto">
+    <div class="openbtn" id="openNavBtn" >
+      <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
+      <div>Recherche</div>
+    </div>
+  </div>
+    </div>
     </div>
     <!-- End -->
 </nav>
