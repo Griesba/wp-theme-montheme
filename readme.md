@@ -52,3 +52,10 @@ Le filter comment_form_default_fields permet de modifier le html du formulaire c
 get_template_directory_uri() => done uri du theme parent. Attention si on est dans un theme enfant le seul moyen  d'avoir son URI est de le récupérer à partir du stylesheet avec get_stylesheet_directory_uri()
 - on peut utiliser le theme enfant pour desenregistrer un script: wp_deregister_style('bootstrap'). Il faut le faire avec une priorité inferieur à celle du theme parent parce qu'il executé après le theme enfant par défaut. Ce changement fait que hook tu theme enfant sera executé après celui du parent.
 - enregistrement de la tradution dans le theme enfant: load_child_theme_textdomain('montheme-enfant', get_stylesheet_directory() . '/languages');
+
+#Le plugin
+Quand vous créer votre thème, la partie plugin vous permet d'isoler la partie fonctionnelle, tout ce qui a trait à la gestion de contenue.
+
+#Le cron
+Pour desactiver le fait qu'un utilisateur déclanche le cron task lors de sa visite sur le site, aller dans le fichier wp-config.php (à la source du dossier WP) et ajouter cette config: define('DISABLE_WP_CRON', true);
+ Ainsi pour activer le cron manuellement il faut appeler le end-point localhost/wp-cron.php 

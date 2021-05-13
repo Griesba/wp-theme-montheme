@@ -124,16 +124,7 @@ function montheme_init() {
 		'show_admin_column' => true,
 	]);
 
-    // enregistrer les posts de type bien: voir la docu pour plus d'info
-    register_post_type('bien', [
-		'label' => 'Bien immo',
-		'public' => true,
-		'menu_positon' => 3,
-		'menu_icon' => 'dashicons-building', // pour avoir les icons wordpress cherchez Dashicons wordpress dans google
-		'supports' => ['title', 'editor', 'thumbnail'],
-		'show_in_rest' => true,
-		'has_archive' => true,
-	]);
+
 }
 
 add_action('init', 'montheme_init'); // les taxonomy ne doivent pas s'enregistrer avant init
@@ -151,6 +142,7 @@ add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
 require_once('metaboxes/sponso.php');
 require_once('options/agence.php');
 require_once('metaboxes/sliderImgUrl.php');
+require_once('options/cron.php');
 
 SponsoMetaBox::register();
 AgenceMenuPage::register();
