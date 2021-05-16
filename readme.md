@@ -59,3 +59,8 @@ Quand vous créer votre thème, la partie plugin vous permet d'isoler la partie 
 #Le cron
 Pour desactiver le fait qu'un utilisateur déclanche le cron task lors de sa visite sur le site, aller dans le fichier wp-config.php (à la source du dossier WP) et ajouter cette config: define('DISABLE_WP_CRON', true);
  Ainsi pour activer le cron manuellement il faut appeler le end-point localhost/wp-cron.php 
+
+
+#Hero block
+un coup de npm install pour installer les librairies necessaires
+pour generer le fichier js, la commande c'est :  npx webpack

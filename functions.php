@@ -47,6 +47,13 @@ function monsite_register_assets()
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap', []);
     wp_enqueue_style('ruda', 'https://fonts.googleapis.com/css?family=Ruda:400,900,700', []);
     wp_enqueue_style('font-awesome', get_stylesheet_directory_uri().'/assets/lib/font-awesome/css/font-awesome.min.css', []);
+
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        ['parent-style'],
+        wp_get_theme()->get('Version')
+    );
 }
 
 
@@ -143,6 +150,7 @@ require_once('metaboxes/sponso.php');
 require_once('options/agence.php');
 require_once('metaboxes/sliderImgUrl.php');
 require_once('options/cron.php');
+require_once('blocks/hero.php');
 
 SponsoMetaBox::register();
 AgenceMenuPage::register();
@@ -276,7 +284,7 @@ function showMessageToAdmin() {
     }
 }
 
-// Alert message when slider plugin not intalled
+// Alert message when slider plugin not installed
 add_action('admin_notices', 'showMessageToAdmin');
 
 /*Navigation Menus*/
