@@ -11,7 +11,7 @@
 <div id="mySidebar" class="sidebar">
   <div class="row">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <div class="container">
+    <div class="container" id="mySidebarSearchForm" style="background-color: red; z-index: 1999;">
     <?=  get_search_form(); ?>
     </div>
   </div>
@@ -53,12 +53,13 @@
              'walker'            => new wp_bootstrap_navwalker())
              );
         ?>
-        <div id="main" class="ml-auto">
-    <div class="openbtn" id="openNavBtn" >
-      <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
-      <div>Recherche</div>
-    </div>
-  </div>
+
+      <div id="main" class="ml-auto">
+        <div class="openbtn" id="openNavBtn" >
+          <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
+          <div>Recherche</div>
+        </div>
+      </div>
     </div>
     </div>
     <!-- End -->
