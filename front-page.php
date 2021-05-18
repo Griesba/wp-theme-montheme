@@ -25,9 +25,9 @@
       )); 
     ?>
     <?php if ($the_query->have_posts()) : ?>
-    <div class="row">
+    <div class="row pb">
         <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-4 col-xs-12 desc">
                 <?php get_template_part('parts/card', 'post'); ?>
             </div>
         <?php endwhile ?>

@@ -155,3 +155,59 @@ p.time > i {
     
   }
   /*.sidebar end */
+
+  /* ================== BASIC CONFIGURATION ================== */
+
+.spacing i {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.pb {
+  padding-bottom: 50px;
+}
+
+/* margin top & Bottom */
+.mt {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+/* Special Margin for Wrap sections */
+.mts {
+	margin-top: -20px;
+}
+
+/* Description Styling / Used in portfolio & Blog images footnotes */
+.desc p {
+	font-family: 'Ruda', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.desc p > i {
+	font-size: 16px;
+	color: #979797;
+}
+
+.desc p > i:hover {
+	font-size: 16px;
+	color: #e74c3c;
+	cursor: pointer;
+}
+
+
+.desc p.lead {
+  font-family: 'Ruda', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: -15px;
+
+  display: block;/* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 6.7em;
+  line-height: 1.8em;
+}

@@ -10,10 +10,7 @@
 	}
 
 
-jQuery(document).ready(function($) {
-
-
-	
+jQuery(document).ready(function($) {	
 
 	jQuery('#mySidebar').on( 'click', function( event ) {
         

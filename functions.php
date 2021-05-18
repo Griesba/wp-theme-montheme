@@ -35,6 +35,7 @@ function monsite_register_assets()
     wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', []);
     wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', ['popper', 'jquery'], false, true);
     wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [], false, true);
+    wp_register_script('hover-pack', get_template_directory_uri().'/assets/lib/hover-pack/hover-pack.js', [], false, true);
     if (!is_customize_preview()) {
 //si je ne suis pas en train de changer d'apparence dans l'admin on charge juste le min css 
         wp_deregister_script('jquery');
@@ -47,6 +48,7 @@ function monsite_register_assets()
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap', []);
     wp_enqueue_style('ruda', 'https://fonts.googleapis.com/css?family=Ruda:400,900,700', []);
     wp_enqueue_style('font-awesome', get_stylesheet_directory_uri().'/assets/lib/font-awesome/css/font-awesome.min.css', []);
+    wp_enqueue_style('hover-pack', get_stylesheet_directory_uri().'/assets/lib/hover-pack/hover-pack.css', []);
 
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style',
