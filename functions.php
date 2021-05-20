@@ -12,6 +12,12 @@ function montheme_supports()
     add_theme_support('post-thumbnails'); // activation des images titre sur une card
     add_theme_support('menus'); // activation de la bar de menus 
     // add_theme_support('html5'); active le html5 si c'est supporté
+    add_theme_support('custom-logo', array(
+        'height' => 100,
+        'width' => 300,
+        'flex-width' => true,
+        'flex-height' => true,
+    ));
     register_nav_menu('header', 'En tête de menu');
     register_nav_menu('footer', 'Pieds de page menu');
 
@@ -29,15 +35,27 @@ function monsite_register_assets()
     wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', []);
     wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', ['popper', 'jquery'], false, true);
     wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [], false, true);
+    wp_register_script('hover-pack', get_template_directory_uri().'/assets/lib/hover-pack/hover-pack.js', [], false, true);
     if (!is_customize_preview()) {
 //si je ne suis pas en train de changer d'apparence dans l'admin on charge juste le min css 
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', [], false, true);
+        wp_enqueue_script('main-js', get_template_directory_uri() .'/assets/js.js', array('jquery'));      
     }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');    
     wp_enqueue_style('main-style', get_stylesheet_uri());
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap', []);
+    wp_enqueue_style('ruda', 'https://fonts.googleapis.com/css?family=Ruda:400,900,700', []);
+    wp_enqueue_style('font-awesome', get_stylesheet_directory_uri().'/assets/lib/font-awesome/css/font-awesome.min.css', []);
+    wp_enqueue_style('hover-pack', get_stylesheet_directory_uri().'/assets/lib/hover-pack/hover-pack.css', []);
+
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        ['parent-style'],
+        wp_get_theme()->get('Version')
+    );
 }
 
 
@@ -115,16 +133,7 @@ function montheme_init() {
 		'show_admin_column' => true,
 	]);
 
-    // enregistrer les posts de type bien: voir la docu pour plus d'info
-    register_post_type('bien', [
-		'label' => 'Bien immo',
-		'public' => true,
-		'menu_positon' => 3,
-		'menu_icon' => 'dashicons-building', // pour avoir les icons wordpress cherchez Dashicons wordpress dans google
-		'supports' => ['title', 'editor', 'thumbnail'],
-		'show_in_rest' => true,
-		'has_archive' => true,
-	]);
+
 }
 
 add_action('init', 'montheme_init'); // les taxonomy ne doivent pas s'enregistrer avant init
@@ -142,6 +151,8 @@ add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
 require_once('metaboxes/sponso.php');
 require_once('options/agence.php');
 require_once('metaboxes/sliderImgUrl.php');
+require_once('options/cron.php');
+require_once('blocks/hero.php');
 
 SponsoMetaBox::register();
 AgenceMenuPage::register();
@@ -275,7 +286,7 @@ function showMessageToAdmin() {
     }
 }
 
-// Alert message when slider plugin not intalled
+// Alert message when slider plugin not installed
 add_action('admin_notices', 'showMessageToAdmin');
 
 /*Navigation Menus*/
@@ -284,5 +295,21 @@ add_action('admin_notices', 'showMessageToAdmin');
 }
 add_action( 'init', 'register_my_menu' ); */
 /*End*/
+
+/**
+ * adding custom logo image config with the_custom_logo
+ */
+function montheme_the_custom_logo() {
+    if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+    }
+}
+
+add_filter('get_custom_logo','change_logo_class');
+
+function change_logo_class($html){
+    $html = str_replace('custom-logo-link', 'mr-1rem', $html);
+    return $html;
+}
 
 ?>

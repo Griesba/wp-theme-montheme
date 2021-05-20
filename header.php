@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php wp_head() ?>  
+    <?php wp_head() ?>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<?php 
-  $attachment_url = ABSPATH.'wp_content/uploads/2021/05/fakeLogoAdd.png';
-  $attachement_id = attachment_url_to_postid($attachment_url);
+<div id="mySidebar" class="sidebar">
+  <div class="row">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="container" id="mySidebarSearchForm" style="background-color: red; z-index: 1999;">
+    <?=  get_search_form(); ?>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+
+  <?php montheme_the_custom_logo() ?> 
+
   
-?> 
-  <img src="<?= get_site_url()?>/wp-content/uploads/2021/05/fakeLogoAdd-e1619951340157.png"  class="d-inline-block align-top" >
-        <!-- Brand and toggle button -->    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Brand and toggle button -->    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
     <!-- End -->
-
-</nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
     <!-- Your website Links -->
@@ -33,13 +38,25 @@
              'theme_location'    => 'header',
              'depth'             => 2,
              'container'         => 'div',
-             'container_class'   => 'col-md-6 ml-auto',
+             'container_class'   => '',
              'container_id'      => '',
-             'menu_class'        => 'navbar-nav mr-auto my-navbar-nav',
+             'menu_class'        => 'navbar-nav mr-auto',
              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
              'walker'            => new wp_bootstrap_navwalker())
              );
         ?>
+
+
+
+    </div>
+
+    <div id="main" class="ml-auto">
+        <div class="openbtn" id="openNavBtn" >
+          <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
+          <div>Recherche</div>
+        </div>
+      </div>
+
     </div>
     <!-- End -->
 </nav>

@@ -1,23 +1,14 @@
-<div class="card" style="width: 18rem;">
-    <!-- on change de format d'imamge de medium à post-thumbnails, les taille changent -->
-    <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
-    <div class="card-body">
-        <h5 class="card-title"><?php the_title() ?></h5>        
-        
-        <?php
-        the_terms(get_the_ID(), 'sport', '<li>', '</li><li>', '</li>'); // ici la liste de sport taxonomy
-        ?>
-        <p class="card-text">
-            <?php the_excerpt() ?>
-        </p>
-        
-        <a href="<?php the_permalink() ?>">Voir plus</a>
+        <a class="b-link-fade b-animate-go" href="<?php the_permalink() ?>">
+          
+          <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'width: 350px; height: auto;']) ?>
+					<div class="b-wrapper">
+              <h4 class="b-from-left b-animate b-delay03" style="margin-top: 79px;"><?= the_title() ?></h4>  
+					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+        <p><?php the_title() ?></p>
+        <p class="lead"><?= get_the_excerpt() ?></p>
         <hr-d>
-        <div style="display: flex; padding: 5px">
-            <span class="card-subtitle mb-2 text-muted category" style="margin: 0px;" ><?php the_category() ?></span>
-            <span class="time" style="margin-left: 15px;"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</span>
-        </div>
-        
-       
-    </div>
-</div>
+          <p class="time"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</p>
+      </hr-d>
+    
