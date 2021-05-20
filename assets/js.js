@@ -9,6 +9,20 @@
 		document.getElementById("main").style.marginLeft= "0";
 	}
 
+	setTimeout(function()
+	{
+		var max = 150;
+	  var tot, str;
+	  $('.desc p.lead').each(function() {
+		  str = String($(this).html());
+		  tot = str.length;
+		str = (tot <= max)
+			? str
+		  : str.substring(0,(max + 1))+"...";
+		$(this).html(str);
+	  });
+	},100); // Delayed for example only. 
+
 
 jQuery(document).ready(function($) {	
 

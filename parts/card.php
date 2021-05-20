@@ -2,7 +2,7 @@
           
           <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'width: 350px; height: auto;']) ?>
 					<div class="b-wrapper">
-              <h4 class="b-from-left b-animate b-delay03"><?= the_title() ?></h4>  
+              <h4 class="b-from-left b-animate b-delay03" style="margin-top: 79px;"><?= the_title() ?></h4>  
 					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
 					</div>
 				</a>
@@ -10,4 +10,5 @@
         <p class="lead"><?= get_the_excerpt() ?></p>
         <hr-d>
           <p class="time"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</p>
+      </hr-d>
     
