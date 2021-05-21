@@ -11,7 +11,7 @@
 <div id="mySidebar" class="sidebar">
   <div class="row">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <div class="container" id="mySidebarSearchForm" style="background-color: red; z-index: 1999;">
+    <div class="container" id="mySidebarSearchForm">
     <?=  get_search_form(); ?>
     </div>
   </div>
