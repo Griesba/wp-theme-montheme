@@ -11,7 +11,7 @@ function montheme_supports()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails'); // activation des images titre sur une card
     add_theme_support('menus'); // activation de la bar de menus 
-    // add_theme_support('html5'); active le html5 si c'est supporté
+    add_theme_support('html5'); // active le html5 si c'est supporté
     add_theme_support('custom-logo', array(
         'height' => 100,
         'width' => 300,
@@ -135,6 +135,10 @@ function montheme_init() {
 
 
 }
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+
 
 add_action('init', 'montheme_init'); // les taxonomy ne doivent pas s'enregistrer avant init
 // utilisation des hooks:  add_action et add_filters (ce sont des pipe)
@@ -146,7 +150,7 @@ add_filter('document_title_separator', 'montheme_title_separator');
 add_filter('document_title_parts', 'montheme_document_title_parts');
 add_filter('nav_menu_css_class', 'mon_theme_menu_class');
 add_filter('nav_menu_link_attributes', 'mon_menu_link_class');
-
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 require_once('metaboxes/sponso.php');
 require_once('options/agence.php');

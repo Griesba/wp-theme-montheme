@@ -9,7 +9,7 @@
 		document.getElementById("main").style.marginLeft= "0";
 	}
 
-	setTimeout(function()
+/* 	setTimeout(function()
 	{
 		var max = 150;
 	  var tot, str;
@@ -22,7 +22,7 @@
 		$(this).html(str);
 	  });
 	},100); // Delayed for example only. 
-
+ */
 
 jQuery(document).ready(function($) {	
 

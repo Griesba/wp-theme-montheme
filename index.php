@@ -18,7 +18,7 @@
 <?php if (have_posts()) : ?>
     <div class="row">
         <?php while (have_posts()) : the_post(); ?>
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-md-4 col-xs-12 desc">
                 <?php get_template_part('parts/card', 'post'); ?>
             </div>
         <?php endwhile ?>
