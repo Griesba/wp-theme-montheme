@@ -1,5 +1,9 @@
 <?php get_header() ?>
+<?php
+echo do_shortcode('[smartslider3 slider="2"]');
+?>
 
+<div class="container">
 <h1><?= esc_html(get_queried_object()->name) ?></h1>
 
 <p>

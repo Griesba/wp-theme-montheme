@@ -316,4 +316,11 @@ function change_logo_class($html){
     return $html;
 }
 
+function montheme_icon(string $name): string {
+    $spriteUrl = get_template_directory_uri() . '/assets/icons/stripe.svg';
+    return <<<HTML
+<svg class="icon"><use xlink:href="{$spriteUrl}#{$name}"></use></svg>
+HTML;
+}
+
 ?>
