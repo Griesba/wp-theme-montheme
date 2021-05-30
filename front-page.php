@@ -1,5 +1,8 @@
 <?php get_header() ?>
 
+<?php
+echo do_shortcode('[smartslider3 slider="2"]');
+?>
 
 <main class="container">
   
@@ -12,7 +15,7 @@
   </div> -->
   
   <div class="row mt centered ">
-      <div class="col-lg-4 offset-lg-4">
+    <div class="col-lg-4 offset-lg-4">
         <h3>What Is Happening?</h3>
         <hr>
       </div>

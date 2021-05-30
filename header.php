@@ -11,7 +11,7 @@
 <div id="mySidebar" class="sidebar">
   <div class="row">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <div class="container" id="mySidebarSearchForm" style="background-color: red; z-index: 1999;">
+    <div class="container" id="mySidebarSearchForm">
     <?=  get_search_form(); ?>
     </div>
   </div>
@@ -21,7 +21,6 @@
 <div class="container">
 
   <?php montheme_the_custom_logo() ?> 
-
   
   <!-- Brand and toggle button -->    
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,20 +39,17 @@
              'container'         => 'div',
              'container_class'   => '',
              'container_id'      => '',
-             'menu_class'        => 'navbar-nav mr-auto',
+             'menu_class'        => 'navbar-nav mr-auto my-navbar-nav',
              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
              'walker'            => new wp_bootstrap_navwalker())
              );
         ?>
 
-
-
     </div>
 
-    <div id="main" class="ml-auto">
+    <div id="main" >
         <div class="openbtn" id="openNavBtn" >
-          <div style="margin-left: 25px;"><i class="fa fa-search" style="font-size:24px"></i></div>
-          <div>Recherche</div>
+          <i class="fa fa-search" style="font-size:24px"></i>         
         </div>
       </div>
 
@@ -112,9 +108,5 @@
 
 
 
-<?php
-echo do_shortcode('[smartslider3 slider="2"]');
-?>
 
-<div class="container">
     

@@ -1,1 +1,0 @@
-Ce dossier contient le code du theme enfant de 'montheme'. Il doit être copier dans le dossier parent des thèmes pour fonctionner.

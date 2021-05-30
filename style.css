@@ -9,6 +9,7 @@ Text Domain: montheme
     color: #42a42b !important;
     background:white !important;
     font-family: 'Roboto', sans-serif;
+    font-size: 24px;
 
 }
 
@@ -16,7 +17,7 @@ Text Domain: montheme
     margin-right: 400px;  
 }
 
-#menu-navigation li a:hover {
+.my-navbar-nav li a:hover {
     /*border-bottom: 5px solid #0e2e80;*/
     border-bottom: 5px solid #42a42b;
     border-radius: 3px;
@@ -24,7 +25,7 @@ Text Domain: montheme
     color: inherit;
 }
 
-#menu-navigation li a {
+.my-navbar-nav li a {
     color: #0e2e80 !important;
     text-transform: uppercase;  
     
@@ -37,16 +38,10 @@ Text Domain: montheme
     white-space: nowrap;
 }
 
-
-
 .active a{
     border-bottom: 5px solid #42a42b;
     border-radius: 3px;
  }
-
-
-
-
 
 .category ul {
     list-style: none;
@@ -121,40 +116,6 @@ Text Domain: montheme
   }
   /*.sidebar end */
 
-  /* ================== BASIC CONFIGURATION ================== */
-
-.spacing i {
-	padding-left: 8px;
-	padding-right: 8px;
-}
-
-.pb {
-  padding-bottom: 50px;
-}
-
-/* margin top & Bottom */
-.mt {
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-
-
-
-.desc p.lead {
-  font-family: 'Ruda', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  margin-top: -15px;
-
-  display: block; /* or inline-block */
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow: hidden;
-  height: 6.7em;
-  line-height: 1.8em;  
-  
-}
 
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------*/
@@ -232,10 +193,6 @@ hr {
   padding: 0;
 }
 
-.navbar {
-font-size: 14px;
-background: #ffffff;
-}
 
 .navbar-fixed-top {
 border-width: 0 0 0px;
@@ -286,10 +243,10 @@ padding-bottom: 15px;
 
 /* Description Styling / Used in portfolio & Blog images footnotes */
 .desc p {
-font-family: 'Ruda', sans-serif;
-font-size: 16px;
-font-weight: 700;
-margin-top: 15px;
+  font-family: 'Ruda', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .desc p > i {
@@ -303,18 +260,13 @@ color: #e74c3c;
 cursor: pointer;
 }
 
-.desc p.lead {
+.desc div.lead > p {
   font-family: 'Ruda', sans-serif;
   font-weight: 400;
   font-size: 14px;
   margin-top: -15px;
-
-display: block;/* or inline-block */
-text-overflow: ellipsis;
-word-wrap: break-word;
-overflow: hidden;
-height: 6.7em;
-line-height: 1.8em;
+  height: 4.5em;
+  line-height: 1.8em;
 }
 
 .desc p.time {
@@ -322,8 +274,8 @@ line-height: 1.8em;
   font-weight: 400;
   font-size: 12px;
   margin-top: 0px;
-color: #979797;
-text-align: right;
+  color: #979797;
+  text-align: right;
 }
 
 .desc p.time > i {
@@ -338,7 +290,7 @@ hr-d {
   height: 1px;
   border: 0;
   border-top: 1px dashed #ccc;
-  margin: 1em 0;
+  margin-bottom: 4em;
   padding: 0;
 }
 
@@ -969,4 +921,27 @@ color: #74c9be;
 
 .credits {
 color: #999;
+}
+
+
+
+.news__action > a {
+  font-weight: bold;
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  color: #0e2e80;
+  justify-self: flex-end;
+  margin-top: -35px;
+}
+
+.news__action svg {
+  transform: translateY(2px);
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  transition: transform 0.3s;
+}
+.news__action:hover svg {
+  transform: translateY(2px) translateX(5px);
 }
