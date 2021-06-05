@@ -40,7 +40,8 @@ function monsite_register_assets()
 //si je ne suis pas en train de changer d'apparence dans l'admin on charge juste le min css 
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', [], false, true);
-        wp_enqueue_script('main-js', get_template_directory_uri() .'/assets/js.js', array('jquery'));      
+        wp_enqueue_script('main-js', get_template_directory_uri() .'/assets/js.js', array('jquery'), false, true); 
+        wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/assets/admin.css' );     
     }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');    
@@ -51,6 +52,7 @@ function monsite_register_assets()
     wp_enqueue_style('hover-pack', get_stylesheet_directory_uri().'/assets/lib/hover-pack/hover-pack.css', []);
 
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
         ['parent-style'],

@@ -55,6 +55,7 @@
 
     </div>
     <!-- End -->
+    </div>
 </nav>
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
